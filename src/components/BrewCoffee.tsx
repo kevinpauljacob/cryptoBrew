@@ -56,6 +56,11 @@ const BrewCoffee = () => {
 
   const brewCoffee = () => {
     write?.();
+    setFormValues({
+      name: '',
+      message: '',
+      amount: '0',
+    })
     console.log("Button was clicked!")
   }
 
