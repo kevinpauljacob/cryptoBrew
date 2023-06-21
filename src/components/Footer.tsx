@@ -9,24 +9,6 @@ import { FaLinkedinIn } from 'react-icons/fa';
 import me from '/public/assets/me.jpg'
 
 const Footer = () => {
-	const navOptions = [
-		{
-			name: 'Skills',
-			url: '/#skills',
-		},
-		{
-			name: 'Projects',
-			url: '#projects',
-		},
-		{
-			name: 'Experiences',
-			url: '#experiences',
-		},
-		{
-			name: 'Contact',
-			url: '/contact',
-		}
-	];
 
   const socials = [
     { logo: <AiOutlineTwitter/>, link: 'https://twitter.com/it_aint_kevin' },
@@ -37,7 +19,7 @@ const Footer = () => {
 
 	return (
 		<footer className='text-white mt-16 animate-fadeUp'>
-			<div className='container mx-auto flex flex-col flex-wrap min-[1400px]:justify-center min-[1024px]:justify-start min-[768px]:justify-center sm:flex-row sm:py-[2%] my-10 px-2'>
+			<div className='flex flex-col min-[430px]:flex-row justify-between py-10 px-2'>
 				<div>
 					<div className='mb-3 flex items-center'>
             <Image className="w-10 h-10 rounded-full mr-2" src={me} alt="Kevin Paul"/>

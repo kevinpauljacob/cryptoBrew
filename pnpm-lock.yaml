@@ -56,6 +56,9 @@ dependencies:
   typescript:
     specifier: 5.1.3
     version: 5.1.3
+  use-truncate-from-middle:
+    specifier: ^1.2.0
+    version: 1.2.0(react-dom@18.2.0)(react@18.2.0)
   uuid:
     specifier: ^9.0.0
     version: 9.0.0
@@ -8266,6 +8269,18 @@ packages:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
       react: 18.2.0
+    dev: false
+
+  /use-truncate-from-middle@1.2.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-Xjr2aKqLM4Lz3oIS1l/erGF2fTPgd/C8uJbns/SlhuMnboH9kaqHFEyxyZvHGhxZjj/2XnrhKzCx7B1gLQ7t5Q==}
+    engines: {node: '>=8', npm: '>=5'}
+    peerDependencies:
+      react: '>= 16.8.0'
+      react-dom: '>= 16.8.0'
+    dependencies:
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /utf-8-validate@5.0.10:

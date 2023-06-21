@@ -14,11 +14,11 @@ const Hero = () => {
   ];
 
   return (
-    <div className='bg-accent-2 rounded-lg w-[68%] p-10'>
+    <div className='bg-accent-2 rounded-lg lg:w-[68%] md:w-[59%] sm:w-[48.25%] mb-6 sm:mb-0 p-10'>
       <div className='w-40 h-40'>
         <Image className="rounded-full border-4 border-white" src={me} alt="My Profile Picture" />
       </div>
-      <h1 className='text-5xl font-bold mt-5'>
+      <h1 className='lg:text-5xl text-4xl font-bold mt-5'>
         Hey! I am Kevin Paul
       </h1>
       <p className='text-xl font-semibold mt-5'>

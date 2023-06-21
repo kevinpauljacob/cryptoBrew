@@ -1,11 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useContractRead } from 'wagmi'
 import ContractABI from '../../contracts/CryptoBrew.json'
-import Image from 'next/image'
-import { createAvatar } from '@dicebear/core';
-import { adventurer } from '@dicebear/collection';
-import { uuid } from 'uuidv4';
-
+import { truncateAddress } from '../utils/truncate'
 interface Brew {
   name: string;
   message: string;
@@ -32,14 +28,14 @@ const Brews = () => {
   }, [data])
 
   return (
-    <div className="flex flex-wrap justify-between mt-4">
+    <div className="grid lg:grid-cols-3 min-[672px]:grid-cols-2 grid-cols-1 auto-rows-auto gap-4 mt-4">
       {
         brews?.map((brew: Brew, index:number) => {
           const seed = brew.from + brew.timestamp;
           const avatar = `https://api.dicebear.com/6.x/adventurer/svg?seed=${seed}`;
           return (
-          <div key={index} className='bg-secondary text-black font-semibold rounded-lg max-w-[32%] p-4 mt-2 '>
-            <div className='flex items-center justify-between'>
+          <div key={index} className='bg-white text-black font-semibold rounded-lg p-4 mt-2 mr-1 '>
+            <div className='flex items-center justify-between pb-2'>
               <div className='bg-accent-2 rounded-full p-1'>
                 <img className="w-16 h-16" src={avatar} alt="User Profile Pic"/>
               </div>
@@ -50,8 +46,8 @@ const Brews = () => {
               {brew.name}
             </h3>
             <p className='text-xl'>
-              <span className='font-bold truncate'>Address: </span> 
-              {brew.from}
+              <span className='font-bold'>Address: </span> 
+              {truncateAddress(brew.from)}
             </p>
             <h1 className='text-xl'>
               <span className='font-bold'>Message: </span> 

@@ -1,6 +1,6 @@
 // import Image from "next/image"
 // import logo from '/public/assets/logo.png'
-import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { ConnectButton  } from '@rainbow-me/rainbowkit';
 
 const Navbar = () => {
   return (
@@ -8,7 +8,9 @@ const Navbar = () => {
         <p className="font-bold text-3xl">
           CryptoBrew
         </p>
-        <ConnectButton />
+        <ConnectButton 
+          accountStatus={"avatar"}
+        />
     </nav>
   )
 }

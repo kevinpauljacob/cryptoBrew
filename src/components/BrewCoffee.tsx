@@ -60,7 +60,7 @@ const BrewCoffee = () => {
   }
 
   return (
-    <form className="bg-accent-1 text-black flex flex-col justify-between rounded-lg w-[30%] min-h-[400px] p-10">
+    <form className="bg-accent-1 text-black flex flex-col justify-between rounded-lg lg:w-[30%] md:w-[39%] sm:w-[49%] min-h-[400px] p-10">
       <div className="flex flex-col">
         <h2 className="text-2xl font-bold pb-5">
           Brew me a Coffee
@@ -72,7 +72,7 @@ const BrewCoffee = () => {
         <label className="text-lg font-semibold" htmlFor="amount">Ethers</label>
         <input className="bg-accent-1 text-black font-md font-semibold focus:outline-none focus:bg-black/10 border border-black placeholder-black/60 rounded-lg p-2" id="amount" type="text" name="amount" placeholder='Enter your Amount' value={amount} onChange={handleChange}/>
       </div>
-      <button type="button" onClick={brewCoffee} className='bg-black text-white rounded-lg p-2.5'>Brew Coffee</button>
+      <button type="button" onClick={brewCoffee} className='bg-black text-white rounded-lg p-2.5 mt-5 sm:mt-0'>Brew Coffee</button>
     </form>
   )
 }

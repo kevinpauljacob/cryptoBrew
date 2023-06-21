@@ -1,19 +1,19 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import '@rainbow-me/rainbowkit/styles.css';
-import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
+import { getDefaultWallets, RainbowKitProvider, darkTheme } from '@rainbow-me/rainbowkit';
 import { configureChains, createConfig, WagmiConfig } from 'wagmi';
 import { polygonMumbai } from 'wagmi/chains';
 import { publicProvider } from 'wagmi/providers/public';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
-require('dotenv').config()
+import { assertExists } from "../utils/assertExists"
 
 export default function App({ Component, pageProps }: AppProps) {
-
+  const env = assertExists(process.env.NEXT_PUBLIC_ALCHEMY_MUMBAI_API_KEY)
   const { chains, publicClient } = configureChains(
     [polygonMumbai],
     [
-      alchemyProvider({ apiKey: process.env.NEXT_PUBLIC_ALCHEMY_MUMBAI_API_KEY }),
+      alchemyProvider({ apiKey: env }),
       publicProvider()
     ]
   );
@@ -33,7 +33,13 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     // <ContextProvider>
       <WagmiConfig config={wagmiConfig}>
-      <RainbowKitProvider chains={chains}>
+      <RainbowKitProvider chains={chains} theme={darkTheme({
+      accentColor: '#806DFF',
+      accentColorForeground: 'white',
+      borderRadius: 'medium',
+      fontStack: 'system',
+      overlayBlur: 'small',
+    })}>
         <Component {...pageProps} />
       </RainbowKitProvider>
     </WagmiConfig>
