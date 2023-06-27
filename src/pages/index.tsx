@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar'
 import { Nunito_Sans } from 'next/font/google'
 import Footer from '@/components/Footer'
 import { useState } from 'react'
+import Head from 'next/head'
 
 const nunitoSans = Nunito_Sans({
   weight: ['400', '700'],
@@ -20,6 +21,10 @@ export default function Home() {
   }
 
   return (
+    <>
+    <Head>
+      <title>CryptoBrew | Brew a Coffee</title>
+    </Head>
     <main className={`bg-primary text-white min-h-screen ${nunitoSans.className}`}>
       <section className="max-w-[1024px] mx-auto px-5">
       <Navbar />
@@ -36,5 +41,6 @@ export default function Home() {
       <Footer />
       </section>
     </main>
+    </>
   )
 }
